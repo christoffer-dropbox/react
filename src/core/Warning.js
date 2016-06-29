@@ -6,12 +6,14 @@
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
+ * NOTE: this has been forked to add support for callbacks from warning.
  * @providesModule warning
  */
 
 "use strict";
 
 var emptyFunction = require('emptyFunction');
+var warningHandlers = require('WarningHandlers');
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -22,8 +24,7 @@ var emptyFunction = require('emptyFunction');
 
 var warning = emptyFunction;
 
-// TODO (drg): make these warnings report to us in prod
-if (__DEV__) {
+if (__DEBUG__) {
   warning = function(condition, format, ...args) {
     if (format === undefined) {
       throw new Error(
@@ -47,6 +48,9 @@ if (__DEV__) {
       var argIndex = 0;
       var message = 'Warning: ' + format.replace(/%s/g, () => args[argIndex++]);
       console.warn(message);
+      warningHandlers.forEach(function(hanlder) {
+        handler(msg);
+      });
       try {
         // --- Welcome to debugging React ---
         // This error was thrown as a convenience so that you can use this stack
