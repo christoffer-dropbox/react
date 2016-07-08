@@ -530,7 +530,7 @@ var ReactCompositeComponentMixin = {
     }
 
     if (this._pendingStateQueue !== null || this._pendingForceUpdate) {
-      if (__DEV__) {
+      if (__DEBUG__) {
         ReactElementValidator.checkAndWarnForMutatedProps(
           this._currentElement
         );

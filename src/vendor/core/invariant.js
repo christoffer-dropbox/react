@@ -43,7 +43,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
       );
     } else {
       // DROPBOX mod: hacks for error codes.  In react 15.2, this is done
-      // via a separate reactProdInvariant function, but given react .12
+      // via a separate reactProdInvariant function, but given react .12/.13
       // uses a different build system hacking this was much easier.
       error = new Error(
         'Minified exception occurred; use the non-minified dev environment ' +
