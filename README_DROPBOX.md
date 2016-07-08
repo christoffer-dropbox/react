@@ -11,6 +11,7 @@ The react-0.13.3.js and react-0.13.3.min.js we have in rSERVER right now are bui
 To update:
 * make your changes, then run `grunt extract-errors` and `grunt build`
 * `cp build/react-with-addons.js metaserver/metaserver/static/javascript/external/react-0.13.3-dev.js`
+* `cp build/react-with-addons.min.js metaserver/metaserver/static/javascript/external/react-0.13.3-prod.min.js`
 * `cp build/react-with-addons-debug.js metaserver/metaserver/static/javascript/external/react-0.13.3-debug.js`
 
 Tips for editing react source:
