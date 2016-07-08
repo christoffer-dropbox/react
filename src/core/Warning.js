@@ -48,7 +48,7 @@ if (__DEBUG__) {
       var argIndex = 0;
       var message = 'Warning: ' + format.replace(/%s/g, () => args[argIndex++]);
       console.warn(message);
-      warningHandlers.call(msg);
+      warningHandlers.call(message);
       try {
         // --- Welcome to debugging React ---
         // This error was thrown as a convenience so that you can use this stack
