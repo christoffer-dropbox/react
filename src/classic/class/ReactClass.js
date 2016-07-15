@@ -898,7 +898,7 @@ var ReactClass = {
       'createClass(...): Class specification must implement a `render` method.'
     );
 
-    if (__DEV__) {
+    if (__DEBUG__) {
       warning(
         !Constructor.prototype.componentShouldUpdate,
         '%s has a method called ' +
