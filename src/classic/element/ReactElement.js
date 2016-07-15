@@ -103,7 +103,7 @@ var ReactElement = function(type, key, ref, owner, context, props) {
   // through the owner.
   this._context = context;
 
-  if (__DEBUG__) {
+  if (__DEV__) {
     // The validation flag and props are currently mutative. We put them on
     // an external backing store so that we can freeze the whole object.
     // This can be replaced with a WeakMap once they are implemented in
@@ -142,7 +142,7 @@ ReactElement.prototype = {
   _isReactElement: true
 };
 
-if (__DEBUG__) {
+if (__DEV__) {
   defineMutationMembrane(ReactElement.prototype);
 }
 

@@ -36,7 +36,7 @@ var ReactReconciler = {
    */
   mountComponent: function(internalInstance, rootID, transaction, context) {
     var markup = internalInstance.mountComponent(rootID, transaction, context);
-    if (__DEBUG__) {
+    if (__DEV__) {
       ReactElementValidator.checkAndWarnForMutatedProps(
         internalInstance._currentElement
       );
@@ -81,7 +81,7 @@ var ReactReconciler = {
       return;
     }
 
-    if (__DEBUG__) {
+    if (__DEV__) {
       ReactElementValidator.checkAndWarnForMutatedProps(nextElement);
     }
 

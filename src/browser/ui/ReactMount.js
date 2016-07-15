@@ -324,7 +324,7 @@ var ReactMount = {
       nextElement,
       container,
       callback) {
-    if (__DEBUG__) {
+    if (__DEV__) {
       ReactElementValidator.checkAndWarnForMutatedProps(nextElement);
     }
 

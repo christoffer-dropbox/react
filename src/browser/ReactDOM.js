@@ -24,7 +24,7 @@ var mapObject = require('mapObject');
  * @private
  */
 function createDOMFactory(tag) {
-  if (__DEBUG__) {
+  if (__DEV__) {
     return ReactElementValidator.createFactory(tag);
   }
   return ReactElement.createFactory(tag);
